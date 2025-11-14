@@ -1,0 +1,80 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+// RESET +++++++++++++++++++++++++++++++++++++++
+body, button, input, textarea, label, select, a , p{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: $text_white;
+}
+
+.section-title {
+    font-size: 2.7rem;
+    width: 100%;
+    padding: 40px 0;
+    text-align: center;
+    @include responsive($tablet) {
+        font-size: 3rem;
+      } 
+      @include responsive($desktop) {
+        text-align: left;
+        font-size: 3.5rem;
+    } 
+}
+
+a {
+  text-decoration: none;
+}
+  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  padding: 0 20px;
+  position: relative;
+  overflow: hidden;
+  background-color: $raisin_black;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+
+  @include responsive($tablet) {
+    padding: 0 10%;
+  }
+  @include responsive($desktop) {
+    padding-left: 25%;
+  }
+
+}
+
+.disabled {
+  pointer-events: none;
+}
+.visible {
+  opacity: 1 !important;
+}
+
+.invisible {
+  opacity: 0 !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.show-flex {
+  display: flex !important;
+}
+.show-block {
+  display: block !important;
+}

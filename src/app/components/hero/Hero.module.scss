@@ -1,0 +1,93 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.home {
+  height: calc(100vh - 50px);
+  width: 100%;
+  padding: 150px 0 70px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include responsive($desktop) {
+    justify-content: center;
+  }
+
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.name {
+  font-size: 3.8rem;
+  line-height: 1.2;
+
+  @include responsive($tablet) {
+    font-size: 5rem;
+  }
+}
+
+.title {
+  font-size: 2rem;
+
+  @include responsive($tablet) {
+    font-size: 3rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.buttonGreen {
+  background-color: $spring_green;
+  color: $raisin_black;
+  border: 1px solid $spring_green;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $raisin_black;
+    color: $text_white;
+  }
+}
+
+@keyframes upDown {
+  20% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.arrowDown {
+  width: 100%;
+  text-align: center;
+  transition: 0.3s;
+
+  @include responsive($desktop) {
+    display: none;
+  }
+}
+
+.arrowIcon {
+  margin: auto;
+  animation: upDown 1s 2s forwards;
+}

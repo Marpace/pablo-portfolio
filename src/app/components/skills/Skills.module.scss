@@ -1,0 +1,94 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.skillsSection {
+  width: 100%;
+  padding: 4rem 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  margin-bottom: 100px;
+  
+  @include responsive($tablet) {
+    height: 500px;
+    margin: 200px 0;
+  }
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #66ffb2;
+}
+
+.scroller {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(90deg, $raisin_black , rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, $raisin_black);
+  }
+}
+
+.scrollerContent {
+  display: inline-block;
+  animation: scrollLeft 80s linear infinite;
+  font-size: 1.25rem;
+}
+
+.scrollerContentLogos {
+    animation: scrollRight 60s linear infinite;
+    width: fit-content;
+}
+
+.skillItem {
+  display: inline-block;
+  margin: 0 2rem;
+  color: #e0e0e0;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-family: "Poppins", sans-serif;
+
+  &:hover {
+    color: #66ffb2;
+  }
+}
+
+.logoItem {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 50px;
+    margin-top: 20px;
+}
+
+/* Infinite scroll keyframes */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

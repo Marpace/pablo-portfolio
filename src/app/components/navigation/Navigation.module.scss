@@ -1,0 +1,86 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.navigation {
+  display: none;
+
+  @include responsive($desktop) {
+    display: flex;
+    position: fixed;
+    left: 10%;
+    top: 50%;
+    translate: 0 -50%;
+    width: 100px;
+    height: 450px;
+    overflow: hidden;
+
+    &:hover .arrows {
+      opacity: 1;
+    }
+  }
+}
+
+.line {
+  position: absolute;
+  left: 50%;
+  translate: -50% 0;
+  width: 2px;
+  height: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 10%,
+    $spring_green 50%,
+    rgba(0, 0, 0, 0) 90%
+  );
+}
+
+.section {
+    font-weight: 400;
+    font-size: 1.5rem;
+  position: absolute;
+  color: $spring_green;
+  padding: 10px 0;
+  border-top: 2px solid $spring_green;
+  border-bottom: 2px solid $spring_green;
+  left: 50%;
+  translate: -50% 0;
+  transition: top 0.3s ease;
+  background-color: $raisin_black;
+}
+
+.active {
+  top: 50%;
+  translate: -50% -50%;
+}
+
+.hiddenAbove {
+  top: -50px;
+}
+
+.hiddenBelow {
+  top: 110%;
+}
+
+.arrows {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  img {
+    cursor: pointer;
+  }
+}
+
+.arrowUp,
+.arrowDown {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
