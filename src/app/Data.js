@@ -104,7 +104,7 @@ export const projects = [
     projectDescription: "Landing page for painting business. Features a paralax background and lighbox gallery",
     builtWith: "HTML / CSS / Javascript",
     projectLive: "https://www.caspianpaintingdesign.com",
-    projectRepo: "n/a",
+    projectRepo: "",
     projectDesign: "n/a"
   },
   {
