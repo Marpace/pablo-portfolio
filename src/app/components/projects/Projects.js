@@ -20,7 +20,6 @@ export default function Projects({ currentSection, setCurrentSection }) {
     if (currentSection === "projects" && !inView && entry?.target) {
       window.scrollTo({
         top: entry.target.offsetTop,
-        left: 0,
         behavior: "smooth",
       });
     }
@@ -52,7 +51,6 @@ export default function Projects({ currentSection, setCurrentSection }) {
           width={25}
           height={11}
         />
-        {/* <img src="/icons/arrow-right.png" alt="arrow right icon" /> */}
       </div>
     </section>
   );

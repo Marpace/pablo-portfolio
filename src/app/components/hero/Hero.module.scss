@@ -51,10 +51,12 @@
   background-color: $spring_green;
   color: $raisin_black;
   border: 1px solid $spring_green;
-  padding: 0.8rem 1.5rem;
+  padding: 0.4rem 1.5rem;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.1rem;
 
   &:hover {
     background-color: $raisin_black;

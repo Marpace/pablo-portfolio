@@ -1,0 +1,19 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.projectsMain {
+    display: flex;
+    gap: 40px;
+    margin: 40px 0 100px;
+    // @include responsive($tablet) {
+    //     align-items: flex-start;
+    // }
+    // @include responsive($tablet_large) {
+    //     align-items: center;
+    //     flex-direction: column;
+    //     padding: 50px 5%;
+    // }
+    // @include responsive($desktop) {
+    //     padding: 50px 10%;
+    // }
+}

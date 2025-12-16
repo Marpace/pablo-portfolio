@@ -1,10 +1,16 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
 .projects {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   color: #fff;
-
+  @include responsive($desktop) {
+    height: 800px;
+  }
 }
 
 .projectsGrid {
@@ -14,6 +20,9 @@
   gap: 2rem;
   width: 100%;
   max-width: 1200px;
+  @include responsive($desktop) {
+    justify-content: flex-start;
+  }
 }
 
 .seeMore {
@@ -27,6 +36,7 @@
   a {
     color: #66ffb2;
     font-weight: 500;
+    font-size: 1rem;
     text-decoration: none;
     transition: color 0.3s ease;
 
@@ -37,17 +47,3 @@
 
 }
 
-/* Responsive layout */
-@media (max-width: 768px) {
-  .projectsGrid {
-    gap: 1.5rem;
-  }
-
-  .sectionTitle {
-    font-size: 1.5rem;
-  }
-
-  .seeMore {
-    justify-content: center;
-  }
-}

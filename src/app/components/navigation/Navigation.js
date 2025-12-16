@@ -4,17 +4,17 @@ import Image from 'next/image'
 import styles from './Navigation.module.scss'
 
 export default function Navigation({ currentSection, setCurrentSection }) {
+  const sections = ['home', 'about', 'skills', 'projects', 'contact']
+
   const handleArrowClick = (direction) => {
     setCurrentSection((prev) => {
-      const order = ['home', 'about', 'skills', 'projects', 'contact']
-      const index = order.indexOf(prev)
-      if (direction === 'up') return order[Math.max(0, index - 1)]
-      if (direction === 'down') return order[Math.min(order.length - 1, index + 1)]
+      const index = sections.indexOf(prev)
+      if (direction === 'up') return sections[Math.max(0, index - 1)]
+      if (direction === 'down') return sections[Math.min(sections.length - 1, index + 1)]
       return prev
     })
   }
 
-  const sections = ['home', 'about', 'skills', 'projects', 'contact']
 
   return (
     <aside className={styles.navigation}>
@@ -37,18 +37,18 @@ export default function Navigation({ currentSection, setCurrentSection }) {
         <Image
           onClick={() => handleArrowClick('up')}
           className={styles.arrowUp}
-          src="/icons/arrow-up.png"
+          src="/icons/arrow-up.svg"
           alt="Arrow up icon"
-          width={24}
-          height={24}
+          width={34}
+          height={34}
         />
         <Image
           onClick={() => handleArrowClick('down')}
           className={styles.arrowDown}
-          src="/icons/arrow-down.png"
+          src="/icons/arrow-down.svg"
           alt="Arrow down icon"
-          width={24}
-          height={24}
+          width={34}
+          height={34}
         />
       </div>
     </aside>

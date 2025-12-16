@@ -40,9 +40,9 @@ export default function Hero({ currentSection, setCurrentSection }) {
           <button onClick={handleContactClick} className={styles.buttonGreen}>
             Contact
           </button>
-          <Link href="/resume" className={styles.buttonGreen}>
+          {/* <Link href="/resume" className={styles.buttonGreen}>
             View Resume
-          </Link>
+          </Link> */}
         </div>
       </header>
 

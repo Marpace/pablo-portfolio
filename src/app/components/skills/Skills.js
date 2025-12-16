@@ -9,13 +9,14 @@ export default function Skills({ currentSection, setCurrentSection }) {
    const { ref, inView, entry } = useInView({
       threshold: 0.5,
     });
+    
   
     useEffect(() => {
       if (inView && setCurrentSection) setCurrentSection(entry.target.id);
     }, [inView]);
   
     useEffect(() => {
-      if (currentSection === "projects" && !inView && entry?.target) {
+      if (currentSection === "skills" && !inView && entry?.target) {
         window.scrollTo({
           top: entry.target.offsetTop,
           left: 0,
@@ -70,7 +71,7 @@ export default function Skills({ currentSection, setCurrentSection }) {
   const repeatedLogos = [...logosSrc, ...logosSrc, ...logosSrc, ...logosSrc, ...logosSrc, ...logosSrc];
 
   return (
-    <section id="skills" className={styles.skillsSection}>
+    <section id="skills" className={styles.skillsSection} ref={ref}>
       <h2 className="section-title">Experience with</h2>
       <div className={styles.scroller}>
         <div className={styles.scrollerContent}>

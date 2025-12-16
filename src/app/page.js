@@ -8,10 +8,13 @@ import Hero from "./components/hero/Hero";
 import About from "./components/about/About";
 import Skills from "./components/skills/Skills";
 import Projects from "./components/projects/Projects";
+import Contact from "./components/contact/Contact";
 
 export default function Home() {
 
   const [currentSection, setCurrentSection] = useState('home');
+
+  console.log("Current Section:", currentSection);
 
   return (
     <div className={styles.page}>
@@ -33,6 +36,10 @@ export default function Home() {
           setCurrentSection={setCurrentSection}
         />
         <Projects
+          currentSection={currentSection}
+          setCurrentSection={setCurrentSection}
+        />
+        <Contact
           currentSection={currentSection}
           setCurrentSection={setCurrentSection}
         />

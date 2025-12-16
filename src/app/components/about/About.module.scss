@@ -8,6 +8,7 @@
 
   @include responsive($tablet) {
       max-width: 800px;
+      padding-top: 200px;
   }
 
   .textContainer {
@@ -22,6 +23,9 @@
       padding: 60px 40px;
     }
     
+    &:hover > .text {
+      filter: blur(0px);
+    }
     
     .text {
         filter: blur(3px);
@@ -37,6 +41,9 @@
 
     .visibleText {
       filter: blur(0px);
+      @include responsive($desktop) {
+        filter: blur(3px);
+      }
     }
 
     .glassBlur {
@@ -70,16 +77,19 @@
         transform: rotate3d(-1, 1, -0.5, 1deg);
         box-shadow: 3px 3px #195861;
       }
+
     }
 
     .seeThrough {
       background-position: 100% 100%;
+      @include responsive($desktop) {
+        background-position: 0 0;
+      }
     }
 
     .cursorGreen {
       display: none;
       @include responsive($desktop) {
-        display: block;
         position: absolute;
         width: 25px;
       }
@@ -87,6 +97,7 @@
 
     .cursorMove {
       @include responsive($desktop) {
+        display: block;
         animation-name: move;
         animation-duration: 1500ms;
         animation-timing-function: ease-in-out;
