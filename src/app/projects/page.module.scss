@@ -3,8 +3,10 @@
 
 .projectsMain {
     display: flex;
+    flex-direction: column;
     gap: 40px;
     margin: 40px 0 50px;
+    align-items: center;
     // @include responsive($tablet) {
     //     align-items: flex-start;
     // }
@@ -29,6 +31,9 @@
     font-family: "Bebas Neue", sans-serif;
     font-size: 1.2rem;
     margin-top: 3rem;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
 
     &:hover {
       background-color: $raisin_black;

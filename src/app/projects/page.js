@@ -15,7 +15,7 @@ function ProjectsPage() {
 
   return (
 
-    <main className={styles.projectsMain}>
+    <div className={styles.projectsMain}>
       {projects.map(project => (
         <ProjectsPageBlock 
           key={project.projectTitle}
@@ -34,7 +34,7 @@ function ProjectsPage() {
       ))}
 
       <button className={styles.button} onClick={() => window.location.href = '/'}>Back to main page</button>
-    </main>
+    </div>
   )
 }
 
