@@ -10,6 +10,13 @@
   color: #fff;
   @include responsive($desktop) {
     height: 800px;
+    width: fit-content;
+    align-items: start;
+  }
+  @include responsive($desktop) {
+    height: 800px;
+    // width: 60%;
+    align-items: start;
   }
 }
 
@@ -22,6 +29,10 @@
   max-width: 1200px;
   @include responsive($desktop) {
     justify-content: flex-start;
+    flex-wrap: nowrap;
+  }
+  @include responsive($desktop_large) {
+    justify-content: space-between;
   }
 }
 

@@ -11,8 +11,9 @@
   color: #fff;
   margin-bottom: 100px;
   
-  @include responsive($tablet) {
+  @include responsive($desktop) {
     padding-top: 350px;
+    width: 70%;
   }
 }
 
