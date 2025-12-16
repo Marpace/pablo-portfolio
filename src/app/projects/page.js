@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ProjectsPageBlock from "../components/projects/";
+import ProjectsPageBlock from "../components/projects/projectsPageBlock/ProjectsPageBlock";
 import {projects} from "../Data"
 import styles from "./page.module.scss";
 
@@ -32,6 +32,8 @@ function ProjectsPage() {
           setModalImage={setModalImage}
         />
       ))}
+
+      <button className={styles.button} onClick={() => window.location.href = '/'}>Back to main page</button>
     </main>
   )
 }

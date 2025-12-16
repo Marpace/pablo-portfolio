@@ -1,0 +1,44 @@
+@use '../../../styles/variables' as *;
+
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 90vw;
+}
+
+.desktopScreenshot {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.mobileScreenshot {
+    width: 100%;
+    display: none;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    p {
+        width: 100%;
+    }
+}
+
+.title {
+    color: $spring_green;
+    font-size: 1rem;
+}
+
+.links {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    text-decoration: underline;
+}

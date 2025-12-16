@@ -4,7 +4,7 @@
 .projectsMain {
     display: flex;
     gap: 40px;
-    margin: 40px 0 100px;
+    margin: 40px 0 50px;
     // @include responsive($tablet) {
     //     align-items: flex-start;
     // }
@@ -17,3 +17,21 @@
     //     padding: 50px 10%;
     // }
 }
+
+.button {
+    background-color: $spring_green;
+    color: $raisin_black;
+    border: 1px solid $spring_green;
+    padding: 0.6rem 1.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.2rem;
+    margin-top: 3rem;
+
+    &:hover {
+      background-color: $raisin_black;
+      color: $text_white;
+    }
+  }
