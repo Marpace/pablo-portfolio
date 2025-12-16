@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ProjectsBlock from "../components/projects/projectsPageBlock/ProjectsPageBlock";
+import ProjectsPageBlock from "../components/projects/";
 import {projects} from "../Data"
 import styles from "./page.module.scss";
 
@@ -17,7 +17,7 @@ function ProjectsPage() {
 
     <main className={styles.projectsMain}>
       {projects.map(project => (
-        <ProjectsBlock 
+        <ProjectsPageBlock 
           key={project.projectTitle}
           desktopSrc={project.desktopSrc}
           mobileSrc={project.mobileSrc}
