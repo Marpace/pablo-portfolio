@@ -11,6 +11,7 @@
   justify-content: space-between;
 
   @include responsive($desktop) {
+    height: 100vh;
     justify-content: center;
   }
 

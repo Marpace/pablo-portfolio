@@ -19,9 +19,9 @@ export default function About({ currentSection, setCurrentSection }) {
     }
   }, [inView]);
 
-
+  
   useEffect(() => {
-    if (currentSection === "about" && !inView && entry?.target) {
+    if (currentSection === "about" && !inView ) {
       window.scrollTo({
         top: entry.target.offsetTop,
         behavior: "smooth",

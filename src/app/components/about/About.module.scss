@@ -6,9 +6,13 @@
   width: 100%;
   margin-bottom: 100px;
 
-  @include responsive($tablet) {
+  @include responsive($desktop) {
       max-width: 800px;
-      padding-top: 200px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      // padding: 200px 0;
   }
 
   .textContainer {

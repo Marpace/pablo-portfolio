@@ -9,13 +9,8 @@
   justify-content: center;
   color: #fff;
   @include responsive($desktop) {
-    height: 800px;
+    height: 100vh;
     width: fit-content;
-    align-items: start;
-  }
-  @include responsive($desktop) {
-    height: 800px;
-    // width: 60%;
     align-items: start;
   }
 }

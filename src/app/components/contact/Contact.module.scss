@@ -3,6 +3,12 @@
 
 .contact {
   margin: 100px 0;
+  @include responsive($desktop) {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .contactForm {

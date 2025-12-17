@@ -12,7 +12,8 @@
   margin-bottom: 100px;
   
   @include responsive($desktop) {
-    padding-top: 350px;
+    height: 100vh;
+    justify-content: center;
     width: 70%;
   }
 }

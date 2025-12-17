@@ -16,6 +16,7 @@ export default function Skills({ currentSection, setCurrentSection }) {
     }, [inView]);
   
     useEffect(() => {
+      console.log(entry)
       if (currentSection === "skills" && !inView && entry?.target) {
         window.scrollTo({
           top: entry.target.offsetTop,
