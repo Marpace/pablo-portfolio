@@ -1,19 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import styles from "./About.module.scss";
 
-export default function About({ currentSection, setCurrentSection }) {
+export default function About({ currentSection, setCurrentSection, isNavScrolling, setIsNavScrolling }) {
+
+  const aboutRef = useRef(null);
+
   const { ref, inView, entry } = useInView({
-    threshold: 1,
+    threshold: 0.5,
   });
 
   const [hovered, setHovered] = useState(false);
   const [showCursor, setShowCursor] = useState(false);
 
   useEffect(() => {
-    if (inView) {
+    if (inView && entry?.target) {
       setCurrentSection(entry.target.id);
       setTimeout(() => setShowCursor(true), 3000);
     }
@@ -21,16 +24,26 @@ export default function About({ currentSection, setCurrentSection }) {
 
   
   useEffect(() => {
-    if (currentSection === "about" && !inView ) {
+    if (isNavScrolling && currentSection === "about" && aboutRef.current ) {
       window.scrollTo({
-        top: entry.target.offsetTop,
+        top: aboutRef.current.offsetTop,
         behavior: "smooth",
       });
     }
+    setTimeout(() => {
+      setIsNavScrolling(false);
+    }, 600);
   }, [currentSection]);
 
   return (
-    <section id="about" className={styles.about} ref={ref}>
+    <section 
+      id="about" 
+      className={styles.about} 
+      ref={(node) => {
+        ref(node);          // intersection observer ref
+        aboutRef.current = node; // scroll ref
+      }}
+    >
       <h2 className="section-title">
         Full Transparency
       </h2>

@@ -13,8 +13,7 @@ import Contact from "./components/contact/Contact";
 export default function Home() {
 
   const [currentSection, setCurrentSection] = useState('home');
-
-  console.log("Current Section:", currentSection);
+  const [isNavScrolling, setIsNavScrolling] = useState(false);
 
   return (
     <div className={styles.page}>
@@ -22,26 +21,38 @@ export default function Home() {
         <Navigation 
           currentSection={currentSection}
           setCurrentSection={setCurrentSection}
+          isNavScrolling={isNavScrolling}
+          setIsNavScrolling={setIsNavScrolling}
         />
         <Hero
           currentSection={currentSection}
           setCurrentSection={setCurrentSection}
+          isNavScrolling={isNavScrolling}
+          setIsNavScrolling={setIsNavScrolling}
         />
         <About
           currentSection={currentSection}
           setCurrentSection={setCurrentSection}
+          isNavScrolling={isNavScrolling}
+          setIsNavScrolling={setIsNavScrolling}
         />
         <Skills
           currentSection={currentSection}
           setCurrentSection={setCurrentSection}
+          isNavScrolling={isNavScrolling}
+          setIsNavScrolling={setIsNavScrolling}
         />
         <Projects
           currentSection={currentSection}
           setCurrentSection={setCurrentSection}
+          isNavScrolling={isNavScrolling}
+          setIsNavScrolling={setIsNavScrolling}
         />
         <Contact
           currentSection={currentSection}
           setCurrentSection={setCurrentSection}
+          isNavScrolling={isNavScrolling}
+          setIsNavScrolling={setIsNavScrolling}
         />
       </main>
     </div>

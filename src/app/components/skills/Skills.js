@@ -2,9 +2,11 @@
 import Image from "next/image";
 import styles from "./Skills.module.scss";
 import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
-export default function Skills({ currentSection, setCurrentSection }) {
+export default function Skills({ currentSection, setCurrentSection, isNavScrolling, setIsNavScrolling }) {
+
+  const skillsRef = useRef(null);
 
    const { ref, inView, entry } = useInView({
       threshold: 0.5,
@@ -16,14 +18,15 @@ export default function Skills({ currentSection, setCurrentSection }) {
     }, [inView]);
   
     useEffect(() => {
-      console.log(entry)
-      if (currentSection === "skills" && !inView && entry?.target) {
+      if (isNavScrolling && currentSection === "skills" && !inView && skillsRef.current) {
         window.scrollTo({
-          top: entry.target.offsetTop,
-          left: 0,
+          top: skillsRef.current.offsetTop,
           behavior: "smooth",
         });
       }
+      setTimeout(() => {
+        setIsNavScrolling(false);
+      }, 600);
     }, [currentSection]);
 
 
@@ -72,7 +75,13 @@ export default function Skills({ currentSection, setCurrentSection }) {
   const repeatedLogos = [...logosSrc, ...logosSrc, ...logosSrc, ...logosSrc, ...logosSrc, ...logosSrc];
 
   return (
-    <section id="skills" className={styles.skillsSection} ref={ref}>
+    <section 
+      id="skills" 
+      className={styles.skillsSection} 
+      ref={(node) => {
+        ref(node);          // intersection observer ref
+        skillsRef.current = node; // scroll ref
+      }}>
       <h2 className="section-title">Experience with</h2>
       <div className={styles.scroller}>
         <div className={styles.scrollerContent}>

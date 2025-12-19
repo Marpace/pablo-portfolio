@@ -1,12 +1,14 @@
 "use client";
 
 import { useInView } from "react-intersection-observer";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import styles from "./Contact.module.scss";
 import { useRouter } from "next/navigation";
 
 
-export default function Contact({ currentSection, setCurrentSection }) {
+export default function Contact({ currentSection, setCurrentSection, isNavScrolling, setIsNavScrolling }) {
+
+  const contactRef = useRef(null);
 
   const router = useRouter();
   const [formData, setFormData] = useState({
@@ -30,13 +32,15 @@ export default function Contact({ currentSection, setCurrentSection }) {
   }, [inView]);
 
   useEffect(() => {
-    if (currentSection === "contact" && !inView && entry?.target) {
+    if (isNavScrolling && currentSection === "contact" && !inView && contactRef.current) {
       window.scrollTo({
-        top: entry.target.offsetTop,
-        left: 0,
+        top: contactRef.current.offsetTop,
         behavior: "smooth",
       });
     }
+    setTimeout(() => {
+      setIsNavScrolling(false);
+    }, 600);
   }, [currentSection]);
 
 
@@ -83,7 +87,13 @@ export default function Contact({ currentSection, setCurrentSection }) {
   };
 
   return (
-    <section className={styles.contact} id="contact" ref={ref}>
+    <section 
+      className={styles.contact} 
+      id="contact" 
+      ref={(node) => {
+        ref(node);          // intersection observer ref
+        contactRef.current = node; // scroll ref
+      }}>
       <h2 className="section-title">Contact me</h2>
       <form onSubmit={handleSubmit} className={styles.contactForm}>
         <input 

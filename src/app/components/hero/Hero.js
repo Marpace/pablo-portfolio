@@ -3,10 +3,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useInView } from 'react-intersection-observer'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import styles from './Hero.module.scss'
 
-export default function Hero({ currentSection, setCurrentSection }) {
+export default function Hero({ currentSection, setCurrentSection, isNavScrolling, setIsNavScrolling }) {
+  
+  const heroRef = useRef(null);
+  
   const { ref, inView, entry } = useInView({
     threshold: 1,
   })
@@ -20,18 +23,27 @@ export default function Hero({ currentSection, setCurrentSection }) {
 
   // Scroll to section if not in view
   useEffect(() => {
-    if (currentSection === 'home' && !inView && entry) {
+    if (isNavScrolling && currentSection === 'home' && !inView && heroRef.current) {
       window.scrollTo({
-        top: entry.target.offsetTop,
+        top: heroRef.current.offsetTop,
         behavior: 'smooth',
       })
     }
+    setTimeout(() => {
+      setIsNavScrolling(false);
+    }, 600);
   }, [currentSection])
 
   const handleContactClick = () => setCurrentSection('contact')
 
   return (
-    <section id="home" className={styles.home} ref={ref}>
+    <section 
+      id="home" 
+      className={styles.home} 
+      ref={(node) => {
+        ref(node);          // intersection observer ref
+        heroRef.current = node; // scroll ref
+      }}>
       <header className={styles.header}>
         <h1 className={styles.name}>Pablo Almonacid</h1>
         <h2 className={styles.title}>Full Stack Developer</h2>

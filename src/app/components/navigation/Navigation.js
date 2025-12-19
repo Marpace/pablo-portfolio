@@ -3,10 +3,11 @@
 import Image from 'next/image'
 import styles from './Navigation.module.scss'
 
-export default function Navigation({ currentSection, setCurrentSection }) {
+export default function Navigation({ currentSection, setCurrentSection, setIsNavScrolling }) {
   const sections = ['home', 'about', 'skills', 'projects', 'contact']
 
   const handleArrowClick = (direction) => {
+    setIsNavScrolling(true);
     setCurrentSection((prev) => {
       const index = sections.indexOf(prev)
       if (direction === 'up') return sections[Math.max(0, index - 1)]

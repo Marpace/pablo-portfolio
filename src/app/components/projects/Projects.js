@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
 import styles from "./Projects.module.scss";
@@ -7,7 +7,10 @@ import ProjectsBlock from "./projectsBlock/ProjectsBlock";
 import { homeProjects } from "../../Data"; 
 import Image from "next/image";
 
-export default function Projects({ currentSection, setCurrentSection }) {
+export default function Projects({ currentSection, setCurrentSection, isNavScrolling, setIsNavScrolling }) {
+
+  const projectsRef = useRef(null);
+
   const { ref, inView, entry } = useInView({
     threshold: 0.5,
   });
@@ -17,16 +20,25 @@ export default function Projects({ currentSection, setCurrentSection }) {
   }, [inView]);
 
   useEffect(() => {
-    if (currentSection === "projects" && !inView && entry?.target) {
+    if (isNavScrolling && currentSection === "projects" && !inView && projectsRef.current) {
       window.scrollTo({
-        top: entry.target.offsetTop,
+        top: projectsRef.current.offsetTop,
         behavior: "smooth",
       });
     }
+    setTimeout(() => {
+      setIsNavScrolling(false);
+    }, 600);
   }, [currentSection]);
 
   return (
-    <section id="projects" className={styles.projects} ref={ref}>
+    <section 
+      id="projects" 
+      className={styles.projects} 
+      ref={(node) => {
+        ref(node);          // intersection observer ref
+        projectsRef.current = node; // scroll ref
+      }}>
       <h2 className="section-title">Projects</h2>
       <div className={styles.projectsGrid}>
         {homeProjects.map((project) => (
