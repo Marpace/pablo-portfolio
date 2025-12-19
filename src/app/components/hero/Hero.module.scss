@@ -46,13 +46,17 @@
   display: flex;
   gap: 1rem;
   margin-top: 1.5rem;
+  height: 40px;
 }
 
 .buttonGreen {
+  display: flex;
+  align-items: center;
+  height: 100%;
   background-color: $spring_green;
   color: $raisin_black;
   border: 1px solid $spring_green;
-  padding: 0.4rem 1.5rem;
+  padding: 0 1.5rem;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -64,6 +68,29 @@
     color: $text_white;
   }
 }
+
+.iconWrap{ 
+  position: relative;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+
+  .icon, .iconHover {
+    position: absolute;
+    height: 100%;
+    border-radius: 6px;
+  }
+
+  .iconHover {
+    opacity: 0;
+    border: 1px solid $spring_green;
+    transition: 200ms;
+  }
+
+  &:hover > .iconHover {
+    opacity: 1;
+  }
+}
+
 
 @keyframes upDown {
   20% {

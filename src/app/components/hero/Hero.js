@@ -34,7 +34,10 @@ export default function Hero({ currentSection, setCurrentSection, isNavScrolling
     }, 600);
   }, [currentSection])
 
-  const handleContactClick = () => setCurrentSection('contact')
+  const handleContactClick = () => {
+    setIsNavScrolling(true);
+    setCurrentSection('contact')
+  }
 
   return (
     <section 
@@ -52,9 +55,10 @@ export default function Hero({ currentSection, setCurrentSection, isNavScrolling
           <button onClick={handleContactClick} className={styles.buttonGreen}>
             Contact
           </button>
-          {/* <Link href="/resume" className={styles.buttonGreen}>
-            View Resume
-          </Link> */}
+          <Link href="https://www.linkedin.com/in/almonacid-pablo" className={styles.iconWrap}>
+            <img className={styles.icon} src='/icons/linkedin-icon.svg'></img>
+            <img className={styles.iconHover} src='/icons/linkedin-icon-hover.svg'></img>
+          </Link>
         </div>
       </header>
 

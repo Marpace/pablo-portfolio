@@ -1,5 +1,22 @@
 export const projects = [
   {
+    src: "/images/projects/notice-tracker.png",
+    alt: "Notice Tracker project screenshot",
+    projectName: "Notice Tracker",
+    liveLink: "https://marpace.github.io/notice-tracker/",
+    repoLink: "https://github.com/Marpace/notice-tracker/tree/master",
+  },
+  {
+    desktopSrc: "/images/projects/notice-tracker.png",
+    mobileSrc: "images/projects/connect-4-m.png",
+    projectTitle: "Notice Tracker",
+    projectDescription: "Schedule reminders for notices that need to be sent out on specific dates",
+    builtWith: "Express / React / Node / MongoDB / NextJS",
+    projectLive: "https://marpace.github.io/Connect4",
+    projectRepo: "https://github.com/Marpace/Connect4/tree/master",
+    projectDesign: "n/a"
+  },
+  {
     desktopSrc: "./images/projects/connect-4-dt.png",
     mobileSrc: "images/projects/connect-4-m.png",
     projectTitle: "Connect 4",
