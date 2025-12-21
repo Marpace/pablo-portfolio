@@ -1,12 +1,16 @@
 import styles from "./ProjectsPageBlock.module.scss";
+import ProjectsPageModal from "../projectsPageModal/ProjectsPageModal";
+import { useState } from "react";
 
 export default function ProjectsBlock(props) {
+
+  const [modalOpen, setModalOpen] = useState(false);
 
 
   return (
     <div className={styles.project}>
-        <img className={styles.desktopScreenshot} src={props.desktopSrc} alt="project thumbnail"></img>
-        <img className={styles.mobileScreenshot} src={props.mobileSrc} alt="project thumbnail"></img>
+        <img onClick={() => setModalOpen(true)} className={styles.desktopScreenshot} src={props.desktopSrc} alt="project thumbnail"></img>
+        <img onClick={() => setModalOpen(true)} className={styles.mobileScreenshot} src={props.mobileSrc} alt="project thumbnail"></img>
 
         <div className={styles.text}>
             <p className={styles.title}>{props.projectTitle}</p>
@@ -20,6 +24,14 @@ export default function ProjectsBlock(props) {
                 <span className={`${styles.link} ${props.projectDesign === "n/a" ? "hidden" : ""}`}>Design</span>
             </div> 
         </div> 
+
+        
+      <ProjectsPageModal 
+        modalOpen={modalOpen}
+        setModalOpen={setModalOpen}
+        desktopSource={props.desktopSrc}
+        mobileSource={props.mobileSrc}
+      />
     </div>
   )
 }

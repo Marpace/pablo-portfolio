@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import ProjectsPageBlock from "../components/projects/projectsPageBlock/ProjectsPageBlock";
 import {projects} from "../Data"
 import styles from "./page.module.scss";
+import ProjectsPageModal from "../components/projects/projectsPageModal/ProjectsPageModal";
 
 function ProjectsPage() {
 

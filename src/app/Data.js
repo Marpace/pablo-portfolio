@@ -1,19 +1,14 @@
 export const projects = [
   {
-    src: "/images/projects/notice-tracker.png",
-    alt: "Notice Tracker project screenshot",
-    projectName: "Notice Tracker",
-    liveLink: "https://marpace.github.io/notice-tracker/",
-    repoLink: "https://github.com/Marpace/notice-tracker/tree/master",
-  },
-  {
-    desktopSrc: "/images/projects/notice-tracker.png",
-    mobileSrc: "images/projects/connect-4-m.png",
-    projectTitle: "Notice Tracker",
-    projectDescription: "Schedule reminders for notices that need to be sent out on specific dates",
+    desktopSrc: "/images/projects/reminder-app-desktop.png",
+    mobileSrc: "images/projects/reminder-app-mobile.png",
+    projectTitle: "Reminders",
+    projectDescription: "Set, schedule and share reminders with other users. Also available as an android native app",
     builtWith: "Express / React / Node / MongoDB / NextJS",
-    projectLive: "https://marpace.github.io/Connect4",
-    projectRepo: "https://github.com/Marpace/Connect4/tree/master",
+    projectLive: "https://discovery-reminder-app.vercel.app/",
+    projectRepo: "https://github.com/Marpace/reminder-app",
+    frontendRepo: "",
+    backendRepo: "",
     projectDesign: "n/a"
   },
   {
@@ -24,6 +19,8 @@ export const projects = [
     builtWith: "Express / React / Node / Socket.io",
     projectLive: "https://marpace.github.io/Connect4",
     projectRepo: "https://github.com/Marpace/Connect4/tree/master",
+    frontendRepo: "",
+    backendRepo: "",
     projectDesign: "n/a"
   },
   {
@@ -85,16 +82,6 @@ export const projects = [
     projectDesign: "n/a"
   },
   {
-    desktopSrc: "images/projects/projects-dt-4.jpg",
-    mobileSrc: "images/projects/projects-m-4.jpg",
-    projectTitle: "Interactive comments section",
-    projectDescription: "Features include adding new comments and replying to other users. It is connected to a database so new comments and replies persist after refreshing.",
-    builtWith: "MongoDB / Node / Express / EJS",
-    projectLive: "https://comments-page.herokuapp.com/",
-    projectRepo: "https://github.com/Marpace/interactive-comments-section",
-    projectDesign: "n/a"
-  },
-  {
     desktopSrc: "images/projects/projects-dt-2.jpg",
     mobileSrc: "images/projects/projects-m-2.jpg",
     projectTitle: "Ecommerce product page",
@@ -102,6 +89,8 @@ export const projects = [
     builtWith: "HTML / SASS / Jquery",
     projectLive: "https://marpace.github.io/ecommerce-product-page-main/",
     projectRepo: "https://github.com/Marpace/ecommerce-product-page-main",
+    frontendRepo: "",
+    backendRepo: "",
     projectDesign: "n/a"
   },
   {
@@ -112,6 +101,8 @@ export const projects = [
     builtWith: "HTML / SASS / Jquery",
     projectLive: "https://marpace.github.io/easybank-landing-page/",
     projectRepo: "https://github.com/Marpace/easybank-landing-page",
+    frontendRepo: "",
+    backendRepo: "",
     projectDesign: "n/a"
   },
   {
@@ -122,16 +113,8 @@ export const projects = [
     builtWith: "HTML / CSS / Javascript",
     projectLive: "https://www.caspianpaintingdesign.com",
     projectRepo: "",
-    projectDesign: "n/a"
-  },
-  {
-    desktopSrc: "images/projects/projects-dt-8.png",
-    mobileSrc: "images/projects/projects-m-8.png",
-    projectTitle: "Paint Paradise",
-    projectDescription: "My first website. Includes features such as carousels, accordions and lightbox gallery",
-    builtWith: "HTML / CSS / Javascript / Bootstrap",
-    projectLive: "n/a",
-    projectRepo: "n/a",
+    frontendRepo: "",
+    backendRepo: "",
     projectDesign: "n/a"
   },
 ]
