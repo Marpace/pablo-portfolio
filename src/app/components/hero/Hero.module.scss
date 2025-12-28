@@ -46,7 +46,7 @@
   display: flex;
   gap: 1rem;
   margin-top: 1.5rem;
-  height: 40px;
+  height: 30px;
 }
 
 .buttonGreen {
@@ -61,7 +61,8 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-family: "Bebas Neue", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+  font-weight: 500;
 
   &:hover {
     background-color: $raisin_black;

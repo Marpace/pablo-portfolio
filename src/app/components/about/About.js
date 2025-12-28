@@ -54,7 +54,7 @@ export default function About({ currentSection, setCurrentSection, isNavScrollin
           }`}
         >
             Programming has become my passion. <br></br>
-            I love solving problems, debugging code, and finding creative solutions that make ideas come to life. Over the past four years, I’ve grown as a self-taught developer by taking on freelance projects and constantly learning new technologies. From building static and dynamic websites to exploring modern frameworks, libraries, and backend technologies. I also embrace AI as a powerful tool to accelerate my coding process, enhance productivity, and inspire new ideas.
+            I love solving problems, debugging code, and finding creative solutions that make ideas come to life. Over the past four years, I’ve grown as a self-taught developer by taking on freelance projects and constantly learning new technologies. From building static and dynamic websites to exploring modern frameworks, libraries, and backend technologies. I also embrace AI as a powerful tool to accelerate my coding process, inspire new ideas and generate short paragraphs about myself. 
         </p>
         <div
           onMouseEnter={() => setHovered(true)}
