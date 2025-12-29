@@ -4,7 +4,7 @@ export const projects = [
     mobileSrc: "images/projects/reminder-app-mobile.png",
     projectTitle: "Reminders",
     projectDescription: "Set, schedule and share reminders with other users. Also available as an android native app",
-    builtWith: "Express / React / Node / MongoDB / NextJS",
+    builtWith: "Express / React / Node / MongoDB / NextJS / Capacitor / Firebase",
     projectLive: "https://discovery-reminder-app.vercel.app/",
     projectRepo: "https://github.com/Marpace/reminder-app",
     frontendRepo: "",
